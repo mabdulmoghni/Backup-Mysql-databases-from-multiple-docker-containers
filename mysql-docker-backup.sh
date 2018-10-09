@@ -16,7 +16,7 @@ for DBName in ${databases}
 do
 docker exec ${MysqlDB} ${MYSQLDUMP} –force –opt –user=${MYSQL_USER} -p${MYSQL_PASSWORD} –databases ${DBName} | gzip > “${BACKUP_DIR}/${DBName}.gz”
 done
-BACKUP_DIR=”/home/mabdulmoghni/mysql/$TIMESTAMP” #set BACKUP_DIR=to backup root dir again
+BACKUP_DIR=”${BACKUP_DIR}/mysql/$TIMESTAMP” #set BACKUP_DIR=to backup root dir again
 done
 
  
